@@ -41,7 +41,8 @@ Vacation.prototype.description = function() {
 };
 //class vacation availability method
 Vacation.prototype.available = function() {
-    propertyAvailability = "Currently this property is: " + this.availability;
+    name = this.name;
+    propertyAvailability = "Currently "+ name+" property is: " + this.availability;
     let main = document.getElementById('main');
     let p = document.createElement('p');
     p.innerHTML = propertyAvailability;
@@ -61,8 +62,9 @@ class SpecialProperty extends Vacation {
 }
 // another method being implemented
 SpecialProperty.prototype.newPrice = function() {
+    name = this.name;
     discountPercent = this.discount / 100;
-    newPrice = "Grab the oppurtunity to to visit this place at our discounted price which is :" + ((this.price) - (this.price * discountPercent));
+    newPrice = "Grab the oppurtunity to to visit "+name+" this place at our discounted price which is :" + ((this.price) - (this.price * discountPercent));
     let main = document.getElementById('main');
     let p = document.createElement('p');
     p.innerHTML = newPrice;
