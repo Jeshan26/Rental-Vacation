@@ -43,3 +43,8 @@ button{
     background-color: #CDB599FF;
     color: black;
 }
+
+footer>p{
+text-align: right;
+    color: gray
+}

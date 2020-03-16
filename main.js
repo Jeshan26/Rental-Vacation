@@ -28,6 +28,7 @@ class Vacation {
 
 //class vacation description method
 Vacation.prototype.description = function() {
+
     propertyName = "Property Name is: " + this.name;
     propertyRating = "Rating for this property is: " + this.rating;
     let main = document.getElementById('main');
