@@ -1,6 +1,8 @@
 // Javascript document 
 
 //registering buttons for event handling purpose
+// var buttons=document.getElementsByClassName("desc");
+
 
 let btn = document.getElementById("desc");
 let btn1 = document.getElementById("avail");
@@ -12,6 +14,24 @@ let PriceBtn = document.getElementById("price");
 let btn6 = document.getElementById("desc3");
 let btn7 = document.getElementById("avail3");
 let Host = document.getElementById("host-rating");
+
+document.getElementById("date").innerHTML = Date();
+
+// sound on button click
+var ding = new Audio();
+ding.src = "sound.mp3";
+
+// for (i = 0; i < buttons.length; i++) {
+//   buttons[i].addEventListener("click", foo);
+
+// }
+
+
+// function foo(e){
+//    var target = event.target;
+//   var parent = target.parentElement;
+//   console.log();
+// }
 
 // class vacation template
 class Vacation {
@@ -28,7 +48,6 @@ class Vacation {
 
 //class vacation description method
 Vacation.prototype.description = function() {
-
     propertyName = "Property Name is: " + this.name;
     propertyRating = "Rating for this property is: " + this.rating;
     let main = document.getElementById('main');
@@ -38,6 +57,7 @@ Vacation.prototype.description = function() {
     p.innerHTML = propertyRating;
     main.appendChild(h3);
     main.appendChild(p);
+    ding.play();
 
 };
 //class vacation availability method
@@ -48,6 +68,7 @@ Vacation.prototype.available = function() {
     let p = document.createElement('p');
     p.innerHTML = propertyAvailability;
     main.appendChild(p);
+    ding.play();
 };
 // 2 object being instantiated
 let winter = new Vacation('Tiny Winter Getaway', 234, 4, 'Collingwood', 2, 'Not Available', 'Near Beach');
@@ -70,6 +91,7 @@ SpecialProperty.prototype.newPrice = function() {
     let p = document.createElement('p');
     p.innerHTML = newPrice;
     main.appendChild(p);
+    ding.play();
 };
 // instantiating object for inherited class
 let special = new SpecialProperty('High Floor', 500, 5, 'Toronto', 2, 'Available', '28th Floor', 20);
@@ -80,6 +102,7 @@ class SuperHost extends Vacation {
     constructor(name, price, rating, location, rooms, availability, features, host) {
         super(name, price, rating, location, rooms, availability, features);
         this.host = host;
+        ding.play();
     }
 }
 
@@ -92,6 +115,7 @@ SuperHost.prototype.hostratings = function() {
     let p = document.createElement('p');
     p.innerHTML = guider;
     main.appendChild(p);
+    ding.play();
 }
 //object being instantiated
 
